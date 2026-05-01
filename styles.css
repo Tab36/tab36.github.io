@@ -1,25 +1,295 @@
+/* ─── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ─── Variables ──────────────────────────────────────────────── */
+:root {
+    --bg:        #ffffff;
+    --bg-sec:    #f5f5f3;
+    --bg-ter:    #ebebeb;
+    --text:      #111111;
+    --text-sec:  #555555;
+    --text-ter:  #999999;
+    --border:    rgba(0, 0, 0, 0.12);
+    --border-md: rgba(0, 0, 0, 0.22);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg:        #111111;
+        --bg-sec:    #1c1c1c;
+        --bg-ter:    #262626;
+        --text:      #f0f0f0;
+        --text-sec:  #aaaaaa;
+        --text-ter:  #666666;
+        --border:    rgba(255, 255, 255, 0.12);
+        --border-md: rgba(255, 255, 255, 0.22);
+    }
+}
+
+/* ─── Base ───────────────────────────────────────────────────── */
 body {
-  margin: 0;
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  background-color: black
+    font-family: 'Syne', sans-serif;
+    background: var(--bg);
+    color: var(--text);
 }
 
-a {
-  text-decoration: none;
+/* ─── Page ───────────────────────────────────────────────────── */
+.page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
 }
-a:link {
-  color: DarkTurquoise;
+
+/* ─── Hero ───────────────────────────────────────────────────── */
+.hero {
+    margin-bottom: 2rem;
 }
-a:visited {
-  color: (157, 0, 209);
+
+.hero h1 {
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    color: var(--text);
 }
-a:hover {
-  text-decoration: underline;
+
+.hero p {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-ter);
+    margin-top: 0.4rem;
+}
+
+/* ─── Grid ───────────────────────────────────────────────────── */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+/* ─── Card ───────────────────────────────────────────────────── */
+.card {
+    background: var(--bg);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    aspect-ratio: 5 / 2;
+    min-width: 0;
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+    transform: scale(1.015);
+    border-color: var(--border-md);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* 1 col on mobile, 2 on tablet, 3 on desktop */
+@media (max-width: 480px) {
+    .card { flex: 1 1 100%; }
+}
+@media (min-width: 481px) and (max-width: 820px) {
+    .card { flex: 1 1 calc(50% - 0.375rem); }
+}
+@media (min-width: 821px) {
+    .card { flex: 1 1 calc(33.33% - 0.5rem); }
+}
+
+/* thumbnail column */
+.card-thumb {
+    width: 38%;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* text column */
+.card-content {
+    flex: 1;
+    padding: 0.9rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+}
+
+.card-title {
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: var(--text);
+    letter-spacing: -0.02em;
+}
+
+.card-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    color: var(--text-ter);
+    margin-top: 3px;
+}
+
+.card-desc {
+    font-size: 0.73rem;
+    color: var(--text-sec);
+    line-height: 1.55;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* ─── Overlay ────────────────────────────────────────────────── */
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+.overlay.open {
+    display: flex;
+}
+
+/* ─── Popup ──────────────────────────────────────────────────── */
+.popup {
+    background: var(--bg);
+    border-radius: var(--radius-lg);
+    border: 0.5px solid var(--border);
+    width: 100%;
+    max-width: 580px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: relative;
+    animation: popIn 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popIn {
+    from { transform: scale(0.88); opacity: 0; }
+    to   { transform: scale(1);    opacity: 1; }
+}
+
+/* thumbnail — fixed, doesn't scroll */
+.popup-thumb {
+    width: 38%;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    min-height: 100%;
+}
+
+.popup-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* scrollable content side */
+.popup-content {
+    flex: 1;
+    padding: 1rem 1.2rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    min-width: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.popup-title {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--text);
+    letter-spacing: -0.03em;
+    padding-right: 1.5rem;
+}
+
+.popup-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-ter);
+}
+
+.popup-desc {
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: var(--text-sec);
+}
+
+.popup-desc p {
+    margin-bottom: 0.6rem;
+}
+
+.popup-desc p:last-child {
+    margin-bottom: 0;
+}
+
+.popup-actions {
+    padding-top: 0.4rem;
+}
+
+/* ─── Buttons ────────────────────────────────────────────────── */
+.btn-primary {
+    width: 100%;
+    padding: 0.55rem 1rem;
+    border-radius: var(--radius-sm);
+    border: none;
+    background: var(--text);
+    color: var(--bg);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.btn-primary:hover {
+    opacity: 0.75;
+}
+
+/* ─── Close button ───────────────────────────────────────────── */
+.close-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 0.5px solid var(--border);
+    background: var(--bg-sec);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--text-sec);
+    z-index: 1;
+}
+
+.close-btn:hover {
+    background: var(--bg-ter);
 }
