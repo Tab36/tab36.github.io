@@ -62,7 +62,7 @@ body {
 
 .hero p {
     font-family: 'Space Mono', monospace;
-    font-size: 0.72rem;
+    font-size: 1rem;
     color: var(--text-ter);
     margin-top: 0.4rem;
 }
