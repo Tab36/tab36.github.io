@@ -1,15 +1,44 @@
-<!DOCKTYPE html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tab36</title>
-    <link rel="icon" type="image/x-icon" href="space invader.png">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <h1>WELCOME TO MY HOMEPAGE</h1>
-    <img src="space invader.png">
-    <br>
-    <a href="https://tab36.github.io/blockpusher">내가 만든 게~~~~~~임</a>
-    <a href="https://tab36.github.io/bpwizard">A Quick SFS BP Editor</a>
-  </body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="page">
+        <div class="hero">
+            <div>
+                <h1>Tab36</h1>
+                <p>// projects &amp; experiments</p>
+            </div>
+        </div>
+        <div class="grid" id="grid"></div>
+    </div>
+
+    <!-- project view overlay -->
+    <div class="overlay" id="view-overlay">
+        <div class="popup" id="popup">
+            <button class="close-btn" id="close-btn">✕</button>
+            <div class="popup-thumb" id="p-thumb"></div>
+            <div class="popup-content">
+                <div>
+                    <div class="popup-title" id="p-title"></div>
+                    <div class="popup-tag" id="p-tag"></div>
+                </div>
+                <div class="popup-desc" id="p-desc"></div>
+                <div class="popup-actions">
+                    <button class="btn-primary" id="p-action-btn"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="projects.js"></script>
+    <script src="main.js"></script>
+</body>
 </html>
