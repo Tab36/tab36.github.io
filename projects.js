@@ -19,14 +19,14 @@
 
 const PROJECTS = [
     {
-        title:     "Project 1",
-        tag:       "web · 2024",
-        thumb:     "imgs/project1.png",
-        emoji:     "⚡",
-        shortDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        fullDesc:  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        title:     "Block Pusher",
+        tag:       "#game #puzzle #8-bit",
+        thumb:     "https://github.com/Tab36/blockpusher/blob/ab9e1cee91a55b22a6cfa9c06493ca0a42e90e51/player.png",
+        emoji:     "🎮",
+        shortDesc: "A simple game where you push blocks into goals.",
+        fullDesc:  "A simple game where you push blocks into goals. Use arrow keys to move the player and push the blocks into the circles. You cannot push a block if there's another block or a wall ahead. Press R to reset the level. This game is Mobile friendly.",
         hasLink:   true,
-        url:       "https://example.com",
+        url:       "/blockpusher",
     },
     {
         title:     "Project 2",
