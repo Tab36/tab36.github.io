@@ -56,7 +56,7 @@ const PROJECTS = [
         shortDesc: "A brainf**k interpreter. It needs tkinter to run.",
         fullDesc:  "A brainf**k interpreter. It needs tkinter to run. It has multiple settings and comes with a basic typewriter program. ",
         hasLink:   false,
-        url:       "https://example.com/download.zip",
+        url:       "inpter.py",
     },
     {
         title:     "Project 5",
