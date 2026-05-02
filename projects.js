@@ -8,7 +8,7 @@
 //  tag         {string}  — small label, e.g. "web · 2024"
 //  thumb       {string}  — path or URL to thumbnail image
 //                          e.g. "imgs/project1.png" or "https://..."
-//  color       {string}  — fallback bg color shown while image loads
+//  emoji       {string}  — fallback emoji shown if image fails to load
 //  shortDesc   {string}  — 1–2 sentences shown on the card
 //  fullDesc    {string}  — full description shown in the popup
 //                          use \n\n to create paragraph breaks
@@ -22,7 +22,7 @@ const PROJECTS = [
         title:     "Project 1",
         tag:       "web · 2024",
         thumb:     "imgs/project1.png",
-        color:     "#EEEDFE",
+        emoji:     "⚡",
         shortDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         fullDesc:  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
         hasLink:   true,
@@ -32,7 +32,7 @@ const PROJECTS = [
         title:     "Project 2",
         tag:       "design · 2024",
         thumb:     "imgs/project2.png",
-        color:     "#E1F5EE",
+        emoji:     "🌿",
         shortDesc: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
         fullDesc:  "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\n\nNemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.\n\nNeque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.",
         hasLink:   false,
@@ -42,7 +42,7 @@ const PROJECTS = [
         title:     "Project 3",
         tag:       "tool · 2023",
         thumb:     "imgs/project3.png",
-        color:     "#FAECE7",
+        emoji:     "🔥",
         shortDesc: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
         fullDesc:  "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti.\n\nSimilique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.\n\nNam libero tempore cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.",
         hasLink:   true,
@@ -52,7 +52,7 @@ const PROJECTS = [
         title:     "Project 4",
         tag:       "app · 2023",
         thumb:     "imgs/project4.png",
-        color:     "#FBEAF0",
+        emoji:     "💎",
         shortDesc: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.",
         fullDesc:  "Nam libero tempore cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.\n\nTemporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut voluptates repudiandae.\n\nItaque earum rerum hic tenetur a sapiente delectus ut aut reiciendis voluptatibus maiores alias consequatur.",
         hasLink:   false,
@@ -62,7 +62,7 @@ const PROJECTS = [
         title:     "Project 5",
         tag:       "research · 2022",
         thumb:     "imgs/project5.png",
-        color:     "#FAEEDA",
+        emoji:     "🌀",
         shortDesc: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae.",
         fullDesc:  "Itaque earum rerum hic tenetur a sapiente delectus ut aut reiciendis voluptatibus maiores alias consequatur.\n\nLorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore.\n\nUllamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit.",
         hasLink:   true,
@@ -72,7 +72,7 @@ const PROJECTS = [
         title:     "Project 6",
         tag:       "experiment · 2022",
         thumb:     "imgs/project6.png",
-        color:     "#E6F1FB",
+        emoji:     "🛸",
         shortDesc: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia dolores.",
         fullDesc:  "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut voluptates repudiandae.\n\nItaque earum rerum hic tenetur a sapiente delectus ut aut reiciendis voluptatibus maiores alias consequatur.\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem.",
         hasLink:   false,

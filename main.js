@@ -26,8 +26,9 @@
             card.setAttribute("aria-label", "Open " + project.title);
 
             card.innerHTML =
-                '<div class="card-thumb" style="background:' + project.color + '">' +
-                    '<img src="' + project.thumb + '" alt="' + project.title + '" />' +
+                '<div class="card-thumb">' +
+                    '<img src="' + project.thumb + '" alt="' + project.title + '" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';" />' +
+                    '<div class="emoji-fallback" style="display:none;">' + project.emoji + '</div>' +
                 '</div>' +
                 '<div class="card-content">' +
                     '<div>' +
@@ -50,8 +51,9 @@
     function openPopup(index) {
         const p = PROJECTS[index];
 
-        pThumb.style.background = p.color;
-        pThumb.innerHTML = '<img src="' + p.thumb + '" alt="' + p.title + '" />';
+        pThumb.innerHTML =
+            '<img src="' + p.thumb + '" alt="' + p.title + '" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';" />' +
+            '<div class="emoji-fallback" style="display:none;">' + p.emoji + '</div>';
 
         pTitle.textContent = p.title;
         pTag.textContent   = p.tag;
