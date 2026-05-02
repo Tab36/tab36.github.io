@@ -21,7 +21,7 @@ const PROJECTS = [
     {
         title:     "Block Pusher",
         tag:       "#game #puzzle #8-bit",
-        thumb:     "https://github.com/Tab36/blockpusher/blob/ab9e1cee91a55b22a6cfa9c06493ca0a42e90e51/player.png",
+        thumb:     "img/block_done.png",
         emoji:     "🎮",
         shortDesc: "A simple game where you push blocks into goals.",
         fullDesc:  "A simple game where you push blocks into goals. Use arrow keys to move the player and push the blocks into the circles. You cannot push a block if there's another block or a wall ahead. Press R to reset the level. This game is Mobile friendly.",
