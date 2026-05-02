@@ -31,10 +31,10 @@ const PROJECTS = [
     {
         title:     "Seojin36",
         tag:       "#homepage #previous #outdated #first_project",
-        thumb:     "imgs/j.png",
+        thumb:     "/img/j.png",
         emoji:     "🖥️",
         shortDesc: "My previous homepage. It was my first HTML project.",
-        fullDesc:  "My previous homepage. It was my first HTML project. It had the links to my blog, my scratch games, a madlib I made and a tax calculator for my school's class country",
+        fullDesc:  "My previous homepage. It was my first HTML project. It had the links to my blog, my scratch games, a madlib I made and a tax calculator for my school's class country.",
         hasLink:   true,
         url:       "/seojin36",
     },
