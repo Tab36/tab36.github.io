@@ -59,21 +59,14 @@ const PROJECTS = [
         url:       "inpter.py",
     },
     {
-        title:     "MDView",
-        tag:       "#markdown #viwer #c #terminal-based",
+        title:     "Project 5",
+        tag:       "research · 2022",
         thumb:     "imgs/project5.png",
-        emoji:     "📟",
-        shortDesc: "A markdown viewer.",
-        fullDesc:  "A markdown viewer that runs in the terminal. Made in C. Use it by typing [path]\\mdview [filename]. Supports most of the important features: \n
-            ■ Text\n
-            ■ Links\n
-            ■ Tables\n
-            ■ Headers\n
-            ■ Bold/Italics\n
-            ■ Code\n
-            ■ Et Cetera\n It does not support images.",
-        hasLink:   false,
-        url:       "mdview.exe",
+        emoji:     "🌀",
+        shortDesc: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae.",
+        fullDesc:  "Itaque earum rerum hic tenetur a sapiente delectus ut aut reiciendis voluptatibus maiores alias consequatur.\n\nLorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore.\n\nUllamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit.",
+        hasLink:   true,
+        url:       "https://example.com",
     },
     {
         title:     "Project 6",
